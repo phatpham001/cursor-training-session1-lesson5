@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mini-blog-backend
+    env: node
+    rootDir: backend
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 10000
+      # Set these in the Render dashboard or update here
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 7d

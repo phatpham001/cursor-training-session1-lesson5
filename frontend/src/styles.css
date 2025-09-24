@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+	--color-primary-50: #eef2ff;
+	--color-primary-100: #e0e7ff;
+	--color-primary-200: #c7d2fe;
+	--color-primary-300: #a5b4fc;
+	--color-primary-400: #818cf8;
+	--color-primary-500: #6366f1;
+	--color-primary-600: #4f46e5;
+	--color-primary-700: #4338ca;
+	--color-primary-800: #3730a3;
+	--color-primary-900: #312e81;
+	--color-accent: #10b981;
+}
+
+@layer base {
+	html, body, #app { height: 100%; }
+	body { @apply bg-gray-50 text-gray-900 antialiased; }
+	a { @apply text-primary-600 hover:text-primary-700; }
+	h1 { @apply text-3xl md:text-4xl font-bold; }
+	h2 { @apply text-2xl md:text-3xl font-semibold; }
+	.container { @apply mx-auto px-4; }
+}
+
+@layer components {
+	/* Base button utilities */
+	.btn { @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors; }
+	.btn-primary { @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors bg-primary-600 text-white hover:bg-primary-700; }
+	.btn-secondary { @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors bg-accent text-white hover:opacity-90; }
+	.card { @apply bg-white border rounded-xl shadow-sm; }
+	.card-body { @apply p-5; }
+	.input { @apply w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500; }
+	.label { @apply block text-sm font-medium mb-1; }
+
+	/* Minimal readable content styling without external plugin */
+	.prose { @apply leading-relaxed text-gray-800; }
+	.prose > * + * { @apply mt-4; }
+	.prose h1 { @apply text-3xl font-bold mt-6; }
+	.prose h2 { @apply text-2xl font-semibold mt-6; }
+	.prose h3 { @apply text-xl font-semibold mt-4; }
+
+	/* Multi-line clamp helper */
+	.clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}

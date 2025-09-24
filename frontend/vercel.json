@@ -1,0 +1,11 @@
+{
+	"version": 2,
+	"builds": [
+		{ "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+	],
+	"framework": "vite",
+	"ignoreCommand": "echo ignoring",
+	"env": {
+		"VITE_API_URL": "https://your-render-backend.onrender.com/api"
+	}
+}
